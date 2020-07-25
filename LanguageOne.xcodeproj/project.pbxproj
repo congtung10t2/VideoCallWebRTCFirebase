@@ -21,7 +21,8 @@
 		A43A068024CC4A45001BC156 /* RTCCustomFrameCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A067F24CC4A45001BC156 /* RTCCustomFrameCapture.swift */; };
 		A43A068324CC4D53001BC156 /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068224CC4D53001BC156 /* CameraSession.swift */; };
 		A43A068524CC4FC5001BC156 /* WebRTCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068424CC4FC5001BC156 /* WebRTCController.swift */; };
-		A43A068724CC4FE3001BC156 /* SignalingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068624CC4FE3001BC156 /* SignalingMessage.swift */; };
+		A43A068724CC4FE3001BC156 /* SignalingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068624CC4FE3001BC156 /* SignalingProtocol.swift */; };
+		A4FA2B7F24CC72E400E9C82D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B7E24CC72E400E9C82D /* DataManager.swift */; };
 		B65C264C623AFB2E416BD169 /* Pods_LanguageOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808D82170D2C374E0BD8F4FD /* Pods_LanguageOne.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,8 @@
 		A43A067F24CC4A45001BC156 /* RTCCustomFrameCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCCustomFrameCapture.swift; sourceTree = "<group>"; };
 		A43A068224CC4D53001BC156 /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
 		A43A068424CC4FC5001BC156 /* WebRTCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCController.swift; sourceTree = "<group>"; };
-		A43A068624CC4FE3001BC156 /* SignalingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalingMessage.swift; sourceTree = "<group>"; };
+		A43A068624CC4FE3001BC156 /* SignalingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalingProtocol.swift; sourceTree = "<group>"; };
+		A4FA2B7E24CC72E400E9C82D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C5AE2BB7E244517F411EC9C4 /* Pods-LanguageOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOne.debug.xcconfig"; path = "Target Support Files/Pods-LanguageOne/Pods-LanguageOne.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA67E5AAFA197AC76D7DB3F /* Pods-LanguageOneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOneTests.release.xcconfig"; path = "Target Support Files/Pods-LanguageOneTests/Pods-LanguageOneTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC63D90251E6B6129D158C5C /* Pods-LanguageOneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOneTests.debug.xcconfig"; path = "Target Support Files/Pods-LanguageOneTests/Pods-LanguageOneTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		A43A065124CC341A001BC156 /* LanguageOne */ = {
 			isa = PBXGroup;
 			children = (
+				A4FA2B7D24CC72D800E9C82D /* Storage */,
 				A43A068124CC4D48001BC156 /* Camera */,
 				A43A067C24CC47C6001BC156 /* WebRTCClient */,
 				A43A067B24CC4454001BC156 /* API */,
@@ -161,7 +164,7 @@
 		A43A067B24CC4454001BC156 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A43A068624CC4FE3001BC156 /* SignalingMessage.swift */,
+				A43A068624CC4FE3001BC156 /* SignalingProtocol.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -182,6 +185,14 @@
 				A43A068224CC4D53001BC156 /* CameraSession.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		A4FA2B7D24CC72D800E9C82D /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A4FA2B7E24CC72E400E9C82D /* DataManager.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43A065724CC341A001BC156 /* ViewController.swift in Sources */,
-				A43A068724CC4FE3001BC156 /* SignalingMessage.swift in Sources */,
+				A4FA2B7F24CC72E400E9C82D /* DataManager.swift in Sources */,
+				A43A068724CC4FE3001BC156 /* SignalingProtocol.swift in Sources */,
 				A43A067E24CC48A7001BC156 /* WebRTCClient.swift in Sources */,
 				A43A065324CC341A001BC156 /* AppDelegate.swift in Sources */,
 				A43A067A24CC42FE001BC156 /* SignalingMessage.swift in Sources */,
