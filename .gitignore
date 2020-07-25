@@ -1,0 +1,7 @@
+*.xcworkspace/
+project.xcworkspace/
+xcuserdata/
+
+# Podfiles
+Pods/
+Podfile.lock
