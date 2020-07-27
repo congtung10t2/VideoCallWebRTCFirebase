@@ -24,6 +24,8 @@ class DataManager {
         print("Error fetching document: \(error!)")
         return
       }
+      let doc = ref.documents
+      print(doc)
     }
     
   }
@@ -33,6 +35,4 @@ class DataManager {
       completion(error)
     }
   }
-  
-  
 }
