@@ -11,7 +11,7 @@ import AVFoundation
 import WebRTC
 
 protocol WebRTCProtocol {
-  func setupWebRTC()
+  func setupWebRTC(localView: RTCEAGLVideoView, remoteView: RTCEAGLVideoView)
   func receivedOffer(senderId: String)
   func captureBuffer(buffer: CMSampleBuffer)
   func receivedAnswer(senderId: String)
@@ -27,7 +27,9 @@ class WebRTCController {
 }
 
 extension WebRTCController: WebRTCProtocol {
-  func setupWebRTC() {
+  func setupWebRTC(localView: RTCEAGLVideoView, remoteView: RTCEAGLVideoView) {
+    client.renderLocalVideo(to: localView)
+    client.renderRemoteVideo(to: remoteView)
     client.setup(videoTrack: true, audioTrack: true, dataChannel: true)
   }
   

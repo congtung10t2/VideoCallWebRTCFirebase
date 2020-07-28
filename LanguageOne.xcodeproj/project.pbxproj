@@ -28,6 +28,7 @@
 		A4FA2B7F24CC72E400E9C82D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B7E24CC72E400E9C82D /* DataManager.swift */; };
 		A4FA2B8124CC7E6300E9C82D /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B8024CC7E6300E9C82D /* DeviceData.swift */; };
 		B65C264C623AFB2E416BD169 /* Pods_LanguageOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808D82170D2C374E0BD8F4FD /* Pods_LanguageOne.framework */; };
+		C732C3B424CFDE2000ED4E90 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A49A8C5424CF20F10013FB9F /* sample.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +146,7 @@
 		A43A065124CC341A001BC156 /* LanguageOne */ = {
 			isa = PBXGroup;
 			children = (
-				A49A8C5324CF20D70013FB9F /* MockVideo */,
+				A49A8C5324CF20D70013FB9F /* Assets */,
 				A4FA2B7D24CC72D800E9C82D /* Storage */,
 				A43A068124CC4D48001BC156 /* Camera */,
 				A43A067C24CC47C6001BC156 /* WebRTCClient */,
@@ -209,12 +210,12 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		A49A8C5324CF20D70013FB9F /* MockVideo */ = {
+		A49A8C5324CF20D70013FB9F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A49A8C5424CF20F10013FB9F /* sample.mp4 */,
+				C732C3B324CFDD5900ED4E90 /* Video */,
 			);
-			path = MockVideo;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		A49A8C5724CF29EF0013FB9F /* Components */ = {
@@ -231,6 +232,14 @@
 				A4FA2B7E24CC72E400E9C82D /* DataManager.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		C732C3B324CFDD5900ED4E90 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A49A8C5424CF20F10013FB9F /* sample.mp4 */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43A065F24CC341C001BC156 /* LaunchScreen.storyboard in Resources */,
+				C732C3B424CFDE2000ED4E90 /* sample.mp4 in Resources */,
 				A43A067724CC3ECF001BC156 /* GoogleService-Info.plist in Resources */,
 				A43A065C24CC341C001BC156 /* Assets.xcassets in Resources */,
 				A43A065A24CC341A001BC156 /* Main.storyboard in Resources */,

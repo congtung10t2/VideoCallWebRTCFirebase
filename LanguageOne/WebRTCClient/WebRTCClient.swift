@@ -25,7 +25,8 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
   private var peerConnectionFactory: RTCPeerConnectionFactory!
   private var peerConnection: RTCPeerConnection?
   private var videoCapturer: RTCVideoCapturer!
-  private var localVideoTrack: RTCVideoTrack!
+  private var localVideoTrack: RTCVideoTrack?
+  private var remoteVideoTrack: RTCVideoTrack?
   private var localAudioTrack: RTCAudioTrack!
   private var localRenderView: RTCEAGLVideoView?
   private var remoteRenderView: RTCEAGLVideoView?
@@ -46,6 +47,13 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
     self.peerConnectionFactory = nil
     self.peerConnection = nil
   }
+  func renderRemoteVideo(to renderer: RTCEAGLVideoView) {
+    remoteRenderView = renderer
+  }
+  
+  func renderLocalVideo(to renderer: RTCEAGLVideoView) {
+    localRenderView = renderer
+  }
   
   // MARK: - Public functions
   func setup(videoTrack: Bool, audioTrack: Bool, dataChannel: Bool){
@@ -57,9 +65,9 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
     var videoEncoderFactory = RTCDefaultVideoEncoderFactory()
     var videoDecoderFactory = RTCDefaultVideoDecoderFactory()
     if TARGET_OS_SIMULATOR != 0 {
-        print("setup vp8 codec")
-        videoEncoderFactory = RTCSimluatorVideoEncoderFactory()
-        videoDecoderFactory = RTCSimulatorVideoDecoderFactory()
+      print("setup vp8 codec")
+      videoEncoderFactory = RTCSimluatorVideoEncoderFactory()
+      videoDecoderFactory = RTCSimulatorVideoDecoderFactory()
     }
     self.peerConnectionFactory = RTCPeerConnectionFactory(encoderFactory: videoEncoderFactory, decoderFactory: videoDecoderFactory)
     //TODO: You have to setup view before add local track
@@ -77,7 +85,7 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
     self.peerConnection!.delegate = self
     
     if self.channels.video {
-      self.peerConnection!.add(localVideoTrack, streamIds: ["stream0"])
+      self.peerConnection!.add(localVideoTrack!, streamIds: ["stream0"])
     }
     if self.channels.audio {
       self.peerConnection!.add(localAudioTrack, streamIds: ["stream0"])
@@ -105,7 +113,7 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
       self.peerConnection = setupPeerConnection()
       self.peerConnection!.delegate = self
       if self.channels.video {
-        self.peerConnection!.add(localVideoTrack, streamIds: ["stream-0"])
+        self.peerConnection!.add(localVideoTrack!, streamIds: ["stream-0"])
       }
       if self.channels.audio {
         self.peerConnection!.add(localAudioTrack, streamIds: ["stream-0"])
@@ -211,14 +219,14 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
   
   private func startLocalVideo() {
     if let capturer = self.videoCapturer as? RTCFileVideoCapturer{
-        print("setup file video capturer")
-        if let _ = Bundle.main.path( forResource: "sample.mp4", ofType: nil ) {
-            capturer.startCapturing(fromFileNamed: "sample.mp4") { (err) in
-                print(err)
-            }
-        }else{
-            print("file did not faund")
+      print("setup file video capturer")
+      if let _ = Bundle.main.path( forResource: "sample.mp4", ofType: nil ) {
+        capturer.startCapturing(fromFileNamed: "sample.mp4") { (err) in
+          print(err)
         }
+      }else{
+        print("file did not faund")
+      }
     }
   }
   
@@ -355,6 +363,7 @@ extension WebRTCClient {
     
     if let track = stream.videoTracks.first {
       print("video track faund")
+      remoteVideoTrack = track
       track.add(remoteRenderView!)
     }
     

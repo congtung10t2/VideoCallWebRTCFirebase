@@ -15,5 +15,6 @@ class RTCVideoView: RTCMTLVideoView {
 class RTCVideoView: RTCEAGLVideoView {
 }
 #endif
-
-
+extension RTCVideoView {
+    
+}
