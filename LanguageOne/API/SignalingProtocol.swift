@@ -53,9 +53,7 @@ extension SignalingClient: SignalingWebRTC {
     
     let sdp = SDP(sdp: desc.sdp)
     let signalingMessage = SignalingMessage(type: type, sessionDescription: sdp, candidate: nil, receivedId: recipentId, senderId: DeviceData.udid)
-    DataManager.shared.sendOffer(message: signalingMessage) { error in
-      
-    }
+    DataManager.shared.sendOffer(message: signalingMessage)
   }
   
   func makeAnswer(recipentId: String, desc: RTCSessionDescription) {

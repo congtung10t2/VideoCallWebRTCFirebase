@@ -29,6 +29,7 @@
 		A4FA2B8124CC7E6300E9C82D /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B8024CC7E6300E9C82D /* DeviceData.swift */; };
 		B65C264C623AFB2E416BD169 /* Pods_LanguageOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808D82170D2C374E0BD8F4FD /* Pods_LanguageOne.framework */; };
 		C732C3B424CFDE2000ED4E90 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A49A8C5424CF20F10013FB9F /* sample.mp4 */; };
+		C732C3B724D01D3200ED4E90 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732C3B624D01D3200ED4E90 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		A4FA2B7E24CC72E400E9C82D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A4FA2B8024CC7E6300E9C82D /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		C5AE2BB7E244517F411EC9C4 /* Pods-LanguageOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOne.debug.xcconfig"; path = "Target Support Files/Pods-LanguageOne/Pods-LanguageOne.debug.xcconfig"; sourceTree = "<group>"; };
+		C732C3B624D01D3200ED4E90 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		CEA67E5AAFA197AC76D7DB3F /* Pods-LanguageOneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOneTests.release.xcconfig"; path = "Target Support Files/Pods-LanguageOneTests/Pods-LanguageOneTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC63D90251E6B6129D158C5C /* Pods-LanguageOneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOneTests.debug.xcconfig"; path = "Target Support Files/Pods-LanguageOneTests/Pods-LanguageOneTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 		A43A065124CC341A001BC156 /* LanguageOne */ = {
 			isa = PBXGroup;
 			children = (
+				C732C3B524D01D1900ED4E90 /* Common */,
 				A49A8C5324CF20D70013FB9F /* Assets */,
 				A4FA2B7D24CC72D800E9C82D /* Storage */,
 				A43A068124CC4D48001BC156 /* Camera */,
@@ -240,6 +243,14 @@
 				A49A8C5424CF20F10013FB9F /* sample.mp4 */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		C732C3B524D01D1900ED4E90 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C732C3B624D01D3200ED4E90 /* AppConfig.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +429,7 @@
 				A43A068724CC4FE3001BC156 /* SignalingProtocol.swift in Sources */,
 				A43A067E24CC48A7001BC156 /* WebRTCClient.swift in Sources */,
 				A4FA2B8124CC7E6300E9C82D /* DeviceData.swift in Sources */,
+				C732C3B724D01D3200ED4E90 /* AppConfig.swift in Sources */,
 				A43A065324CC341A001BC156 /* AppDelegate.swift in Sources */,
 				A43A067A24CC42FE001BC156 /* SignalingMessage.swift in Sources */,
 				A43A068524CC4FC5001BC156 /* WebRTCController.swift in Sources */,

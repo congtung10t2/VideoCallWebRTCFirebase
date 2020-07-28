@@ -14,6 +14,7 @@ struct SignalingMessage: Codable {
   let receivedId: String?
   let senderId: String?
 }
+
 enum SignalingType: String, Codable {
   case offer
   case answer
