@@ -14,13 +14,22 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var localView: RTCEAGLVideoView!
   var webRTCController: WebRTCProtocol = WebRTCController.shared
+  var signalingClient: SignalingClient = SignalingClient.shared
   override func viewDidLoad() {
     super.viewDidLoad()
+    remoteView.delegate = self
+    localView.delegate = self
+    signalingClient.createRoom(name: "tungtest")
     webRTCController.setupWebRTC(localView: localView, remoteView: remoteView)
     
     // Do any additional setup after loading the view.
   }
-
-
+}
+extension ViewController: RTCVideoViewDelegate {
+  func videoView(_ videoView: RTCVideoRenderer, didChangeVideoSize size: CGSize) {
+    
+  }
+  
+  
 }
 

@@ -8,7 +8,12 @@
 
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
+protocol FireBaseRTCProtocol {
+  func sendOffer()
+  func createRoom(name: String)
+  func joinRoom(name: String)
+  
+}
 class DataManager {
   static var shared = DataManager()
   var db: Firestore!
@@ -35,4 +40,6 @@ class DataManager {
       completion(error)
     }
   }
+  
+  
 }

@@ -21,7 +21,7 @@ protocol WebRTCProtocol {
 class WebRTCController {
   static let shared = WebRTCController()
   var client = WebRTCClient()
-  var signalingClient: SignalingClient = SignalingClient.shared
+  var signalingClient: SignalingWebRTC = SignalingClient.shared
   
   
 }

@@ -11,6 +11,7 @@ import WebRTC
 protocol SignalingProtocol {
   func sendMessage(signalingMessage: SignalingMessage)
   func receivedMessage(signalingMessage: SignalingMessage)
+  func createRoom(name: String)
 }
 
 protocol SignalingWebRTC {
@@ -32,6 +33,9 @@ class SignalingClient: SignalingProtocol {
   }
   
   func receivedMessage(signalingMessage: SignalingMessage) {
+    
+  }
+  func createRoom(name: String) {
     
   }
   
