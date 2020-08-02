@@ -61,7 +61,7 @@ extension WebRTCController: WebRTCProtocol {
   }
   
   func captureBuffer(buffer: CMSampleBuffer) {
-    
+    client.captureCurrentFrame(sampleBuffer: buffer)
   }
   
   private func sendCandidate(iceCandidate: RTCIceCandidate){
