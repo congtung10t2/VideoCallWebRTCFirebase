@@ -7,6 +7,7 @@ target 'LanguageOne' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'TinderSwipeView’ , '~> 1.1.8'
   pod 'GoogleWebRTC'
   pod 'MaterialComponents/BottomAppBar'
 

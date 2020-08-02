@@ -28,6 +28,7 @@ class DataManager : NSObject, FireBaseRTCProtocol {
   var offerListener: ListenerRegistration?
   @objc dynamic var listRoom = [String: Room] ()
   
+  
   func configurate() {
     let settings = FirestoreSettings()
     Firestore.firestore().settings = settings

@@ -12,8 +12,12 @@ final class RoomViewController: UIViewController {
   @IBOutlet weak var bottomBarView: MDCBottomAppBarView!
   @IBOutlet weak var tableView: UITableView!
   var signalingClient: SignalingClient = SignalingClient.shared
-  var room: [RoomId] {
-    return DataManager.shared.listRoom.map { RoomId(id: $0.key, room: $0.value) }
+  var lastRoom: [RoomId] = []
+  func getAllRoom() -> [RoomId] {
+    return lastRoom
+  }
+  func calulateRooms() {
+    lastRoom = DataManager.shared.listRoom.map { RoomId(id: $0.key, room: $0.value) }
   }
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,17 +57,18 @@ final class RoomViewController: UIViewController {
   }
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     if keyPath == "listRoom" {
+      calulateRooms()
       tableView.reloadData()
     }
   }
 }
 extension RoomViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return room.count
+    return getAllRoom().count
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let roomId =  room[indexPath.row].id
+    let roomId =  getAllRoom()[indexPath.row].id
     DataManager.shared.joinRoom(by: roomId, useHost: false)
     let vc = HomeViewController.instantiate
     
@@ -74,7 +79,7 @@ extension RoomViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: RoomViewCell = tableView.dequeueReusableCell(for: indexPath, cellType: RoomViewCell.self)
-    cell.load(room: room[indexPath.row])
+    cell.load(room: getAllRoom()[indexPath.row])
     return cell
   }
 }
