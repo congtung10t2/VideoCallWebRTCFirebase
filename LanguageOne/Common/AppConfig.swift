@@ -9,19 +9,17 @@
 import Foundation
 class AppConfig {
   class Notifications {
-    static let RTCOffer = NSNotification.Name("offer")
-    static let RTCAnwer = NSNotification.Name("answer")
-    static let RTCCandidate = NSNotification.Name("candidate")
+    static let RTCMessage = NSNotification.Name("RTCMessage")
     static func fromString(description: String) -> Notification.Name {
       switch description {
       case "offer":
-        return RTCOffer
+        return RTCMessage
       case "answer":
-        return RTCAnwer
+        return RTCMessage
       case "candidate":
-        return RTCCandidate
+        return RTCMessage
       default:
-        return RTCCandidate
+        return RTCMessage
       }
     }
   }

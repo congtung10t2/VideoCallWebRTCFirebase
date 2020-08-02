@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		61DCA5D11E5070E512680A2C /* Pods_LanguageOneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA1460D3BC7BB81BF4E8E79 /* Pods_LanguageOneTests.framework */; };
+		A41EE4B924D46341003EAD65 /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41EE4B824D46341003EAD65 /* Storyboard+Extensions.swift */; };
 		A420308A24CF039100437D35 /* RTCSimulatorVideoDecoderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A420308924CF039100437D35 /* RTCSimulatorVideoDecoderFactory.swift */; };
+		A433D88424D152BE007D77BA /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433D88324D152BE007D77BA /* RoomViewController.swift */; };
 		A43A065324CC341A001BC156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A065224CC341A001BC156 /* AppDelegate.swift */; };
 		A43A065524CC341A001BC156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A065424CC341A001BC156 /* SceneDelegate.swift */; };
-		A43A065724CC341A001BC156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A065624CC341A001BC156 /* ViewController.swift */; };
+		A43A065724CC341A001BC156 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A065624CC341A001BC156 /* HomeViewController.swift */; };
 		A43A065A24CC341A001BC156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43A065824CC341A001BC156 /* Main.storyboard */; };
 		A43A065C24CC341C001BC156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43A065B24CC341C001BC156 /* Assets.xcassets */; };
 		A43A065F24CC341C001BC156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43A065D24CC341C001BC156 /* LaunchScreen.storyboard */; };
@@ -23,8 +25,12 @@
 		A43A068324CC4D53001BC156 /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068224CC4D53001BC156 /* CameraSession.swift */; };
 		A43A068524CC4FC5001BC156 /* WebRTCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068424CC4FC5001BC156 /* WebRTCController.swift */; };
 		A43A068724CC4FE3001BC156 /* SignalingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A068624CC4FE3001BC156 /* SignalingProtocol.swift */; };
+		A489FDD824D3D801002C2100 /* RoomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489FDD724D3D801002C2100 /* RoomViewCell.xib */; };
+		A489FDDA24D3D932002C2100 /* RoomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489FDD924D3D932002C2100 /* RoomViewCell.swift */; };
 		A49A8C5624CF21F30013FB9F /* RTCSimluatorVideoEncoderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A8C5524CF21F30013FB9F /* RTCSimluatorVideoEncoderFactory.swift */; };
 		A49A8C5924CF2A000013FB9F /* RTCVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A8C5824CF2A000013FB9F /* RTCVideoView.swift */; };
+		A4A8898224D443C600401934 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8898124D443C600401934 /* UIViewController+Extensions.swift */; };
+		A4A8898424D452FB00401934 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8898324D452FB00401934 /* UICollectionView+Extensions.swift */; };
 		A4FA2B7F24CC72E400E9C82D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B7E24CC72E400E9C82D /* DataManager.swift */; };
 		A4FA2B8124CC7E6300E9C82D /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA2B8024CC7E6300E9C82D /* DeviceData.swift */; };
 		B65C264C623AFB2E416BD169 /* Pods_LanguageOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808D82170D2C374E0BD8F4FD /* Pods_LanguageOne.framework */; };
@@ -46,11 +52,13 @@
 		2AA1460D3BC7BB81BF4E8E79 /* Pods_LanguageOneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LanguageOneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771604E19576F445731E1036 /* Pods-LanguageOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOne.release.xcconfig"; path = "Target Support Files/Pods-LanguageOne/Pods-LanguageOne.release.xcconfig"; sourceTree = "<group>"; };
 		808D82170D2C374E0BD8F4FD /* Pods_LanguageOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LanguageOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41EE4B824D46341003EAD65 /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
 		A420308924CF039100437D35 /* RTCSimulatorVideoDecoderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCSimulatorVideoDecoderFactory.swift; sourceTree = "<group>"; };
+		A433D88324D152BE007D77BA /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		A43A064F24CC341A001BC156 /* LanguageOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43A065224CC341A001BC156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43A065424CC341A001BC156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A43A065624CC341A001BC156 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A43A065624CC341A001BC156 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A43A065924CC341A001BC156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A43A065B24CC341C001BC156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A43A065E24CC341C001BC156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,9 +73,13 @@
 		A43A068224CC4D53001BC156 /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
 		A43A068424CC4FC5001BC156 /* WebRTCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCController.swift; sourceTree = "<group>"; };
 		A43A068624CC4FE3001BC156 /* SignalingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalingProtocol.swift; sourceTree = "<group>"; };
+		A489FDD724D3D801002C2100 /* RoomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewCell.xib; sourceTree = "<group>"; };
+		A489FDD924D3D932002C2100 /* RoomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewCell.swift; sourceTree = "<group>"; };
 		A49A8C5424CF20F10013FB9F /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		A49A8C5524CF21F30013FB9F /* RTCSimluatorVideoEncoderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCSimluatorVideoEncoderFactory.swift; sourceTree = "<group>"; };
 		A49A8C5824CF2A000013FB9F /* RTCVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCVideoView.swift; sourceTree = "<group>"; };
+		A4A8898124D443C600401934 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A4A8898324D452FB00401934 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		A4FA2B7E24CC72E400E9C82D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A4FA2B8024CC7E6300E9C82D /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		C5AE2BB7E244517F411EC9C4 /* Pods-LanguageOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageOne.debug.xcconfig"; path = "Target Support Files/Pods-LanguageOne/Pods-LanguageOne.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +128,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A406C7EB24D12B2B00C5F4F7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A489FDD624D3D7E9002C2100 /* Room */,
+				A406C7ED24D12B4D00C5F4F7 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A406C7EC24D12B4000C5F4F7 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				A43A065424CC341A001BC156 /* SceneDelegate.swift */,
+				A43A065224CC341A001BC156 /* AppDelegate.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		A406C7ED24D12B4D00C5F4F7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A43A065624CC341A001BC156 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A406C7EE24D12B6100C5F4F7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A43A065824CC341A001BC156 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		A420308824CF036E00437D35 /* WebRTCTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +194,10 @@
 		A43A065124CC341A001BC156 /* LanguageOne */ = {
 			isa = PBXGroup;
 			children = (
+				A4A8898024D443A600401934 /* Extensions */,
+				A406C7EE24D12B6100C5F4F7 /* Storyboard */,
+				A406C7EC24D12B4000C5F4F7 /* Apps */,
+				A406C7EB24D12B2B00C5F4F7 /* Screens */,
 				C732C3B524D01D1900ED4E90 /* Common */,
 				A49A8C5324CF20D70013FB9F /* Assets */,
 				A4FA2B7D24CC72D800E9C82D /* Storage */,
@@ -155,10 +205,6 @@
 				A43A067C24CC47C6001BC156 /* WebRTCClient */,
 				A43A067B24CC4454001BC156 /* API */,
 				A43A067824CC42EC001BC156 /* Model */,
-				A43A065224CC341A001BC156 /* AppDelegate.swift */,
-				A43A065424CC341A001BC156 /* SceneDelegate.swift */,
-				A43A065624CC341A001BC156 /* ViewController.swift */,
-				A43A065824CC341A001BC156 /* Main.storyboard */,
 				A43A065B24CC341C001BC156 /* Assets.xcassets */,
 				A43A065D24CC341C001BC156 /* LaunchScreen.storyboard */,
 				A43A067624CC3ECF001BC156 /* GoogleService-Info.plist */,
@@ -213,6 +259,16 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		A489FDD624D3D7E9002C2100 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				A433D88324D152BE007D77BA /* RoomViewController.swift */,
+				A489FDD724D3D801002C2100 /* RoomViewCell.xib */,
+				A489FDD924D3D932002C2100 /* RoomViewCell.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
 		A49A8C5324CF20D70013FB9F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +283,16 @@
 				A49A8C5824CF2A000013FB9F /* RTCVideoView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A4A8898024D443A600401934 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8898124D443C600401934 /* UIViewController+Extensions.swift */,
+				A4A8898324D452FB00401934 /* UICollectionView+Extensions.swift */,
+				A41EE4B824D46341003EAD65 /* Storyboard+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A4FA2B7D24CC72D800E9C82D /* Storage */ = {
@@ -338,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43A065F24CC341C001BC156 /* LaunchScreen.storyboard in Resources */,
+				A489FDD824D3D801002C2100 /* RoomViewCell.xib in Resources */,
 				C732C3B424CFDE2000ED4E90 /* sample.mp4 in Resources */,
 				A43A067724CC3ECF001BC156 /* GoogleService-Info.plist in Resources */,
 				A43A065C24CC341C001BC156 /* Assets.xcassets in Resources */,
@@ -423,14 +490,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43A065724CC341A001BC156 /* ViewController.swift in Sources */,
+				A4A8898424D452FB00401934 /* UICollectionView+Extensions.swift in Sources */,
+				A43A065724CC341A001BC156 /* HomeViewController.swift in Sources */,
 				A49A8C5624CF21F30013FB9F /* RTCSimluatorVideoEncoderFactory.swift in Sources */,
 				A4FA2B7F24CC72E400E9C82D /* DataManager.swift in Sources */,
 				A43A068724CC4FE3001BC156 /* SignalingProtocol.swift in Sources */,
+				A4A8898224D443C600401934 /* UIViewController+Extensions.swift in Sources */,
 				A43A067E24CC48A7001BC156 /* WebRTCClient.swift in Sources */,
 				A4FA2B8124CC7E6300E9C82D /* DeviceData.swift in Sources */,
 				C732C3B724D01D3200ED4E90 /* AppConfig.swift in Sources */,
 				A43A065324CC341A001BC156 /* AppDelegate.swift in Sources */,
+				A41EE4B924D46341003EAD65 /* Storyboard+Extensions.swift in Sources */,
+				A489FDDA24D3D932002C2100 /* RoomViewCell.swift in Sources */,
 				A43A067A24CC42FE001BC156 /* SignalingMessage.swift in Sources */,
 				A43A068524CC4FC5001BC156 /* WebRTCController.swift in Sources */,
 				A43A068324CC4D53001BC156 /* CameraSession.swift in Sources */,
@@ -438,6 +509,7 @@
 				A43A065524CC341A001BC156 /* SceneDelegate.swift in Sources */,
 				A420308A24CF039100437D35 /* RTCSimulatorVideoDecoderFactory.swift in Sources */,
 				A43A068024CC4A45001BC156 /* RTCCustomFrameCapture.swift in Sources */,
+				A433D88424D152BE007D77BA /* RoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

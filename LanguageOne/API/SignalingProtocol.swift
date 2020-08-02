@@ -15,7 +15,7 @@ protocol SignalingProtocol {
 }
 
 protocol SignalingWebRTC {
-  func sendOffer(recipentId: String, desc: RTCSessionDescription)
+  func sendOffer(desc: RTCSessionDescription)
   func makeAnswer(recipentId: String, desc: RTCSessionDescription)
   func sendCandidate(recipentId: String, iceCandidate: RTCIceCandidate)
 }
@@ -25,7 +25,7 @@ class SignalingClient: SignalingProtocol {
     do {
         let data = try JSONEncoder().encode(signalingMessage)
         let message = String(data: data, encoding: String.Encoding.utf8)!
-      //sendmessage
+     
         
     }catch{
         print(error)
@@ -36,23 +36,25 @@ class SignalingClient: SignalingProtocol {
     
   }
   func createRoom(name: String) {
-    
+    DataManager.shared.createRoom(name: name)
   }
   
   static let shared = SignalingClient()
 }
 extension SignalingClient: SignalingWebRTC {
   func sendCandidate(recipentId: String, iceCandidate: RTCIceCandidate) {
-    let candidate = Candidate.init(sdp: iceCandidate.sdp, sdpMLineIndex: iceCandidate.sdpMLineIndex, sdpMid: iceCandidate.sdpMid!)
+    let candidate = Candidate(sdp: iceCandidate.sdp, sdpMLineIndex: iceCandidate.sdpMLineIndex, sdpMid: iceCandidate.sdpMid!)
     let signalingMessage = SignalingMessage(type: .candidate, sessionDescription: nil, candidate: candidate, receivedId: recipentId, senderId: DeviceData.udid)
-    
+    DataManager.shared.sendCandidate(message: signalingMessage) { error in
+      
+    }
   }
   
-  func sendOffer(recipentId: String, desc: RTCSessionDescription) {
+  func sendOffer(desc: RTCSessionDescription) {
     let type: SignalingType = SignalingType.initWith(rtcType: desc.type)
     
     let sdp = SDP(sdp: desc.sdp)
-    let signalingMessage = SignalingMessage(type: type, sessionDescription: sdp, candidate: nil, receivedId: recipentId, senderId: DeviceData.udid)
+    let signalingMessage = SignalingMessage(type: type, sessionDescription: sdp, candidate: nil, receivedId: nil, senderId: DeviceData.udid)
     DataManager.shared.sendOffer(message: signalingMessage)
   }
   
@@ -61,5 +63,10 @@ extension SignalingClient: SignalingWebRTC {
     
     let sdp = SDP(sdp: desc.sdp)
     let signalingMessage = SignalingMessage(type: type, sessionDescription: sdp, candidate: nil, receivedId: recipentId, senderId: DeviceData.udid)
+    DataManager.shared.sendAnswer(message: signalingMessage) { error in
+      
+    }
   }
+  
+  
 }

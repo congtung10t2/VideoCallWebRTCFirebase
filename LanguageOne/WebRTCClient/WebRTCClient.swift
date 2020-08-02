@@ -35,7 +35,9 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
   private var channels: (video: Bool, audio: Bool, datachannel: Bool) = (false, false, false)
   
   var delegate: WebRTCClientDelegate?
+  var recipentId: String?
   public private(set) var isConnected: Bool = false
+  
   
   override init() {
     super.init()
@@ -122,7 +124,6 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
         self.dataChannel = self.setupDataChannel()
         self.dataChannel?.delegate = self
       }
-      
     }
     
     print("set remote description")
@@ -159,7 +160,6 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
         let buffer = RTCDataBuffer(data: message.data(using: String.Encoding.utf8)!, isBinary: false)
         _dataChannel.sendData(buffer)
       }else {
-        
         print("data channel is not ready state")
       }
     }else{
@@ -192,7 +192,7 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
   // MARK: - Setup
   private func setupPeerConnection() -> RTCPeerConnection{
     let rtcConf = RTCConfiguration()
-    rtcConf.iceServers = [RTCIceServer(urlStrings: ["stun:stun.l.google.com:19302", "stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"])]
+    rtcConf.iceServers = [RTCIceServer(urlStrings: ["stun:stun.l.google.com:19302"])]
     let mediaConstraints = RTCMediaConstraints.init(mandatoryConstraints: nil, optionalConstraints: nil)
     let pc = self.peerConnectionFactory.peerConnection(with: rtcConf, constraints: mediaConstraints, delegate: nil)
     return pc
@@ -347,9 +347,7 @@ extension WebRTCClient {
         self.onConnected()
       }
     default:
-      if self.isConnected{
-        self.onDisConnected()
-      }
+      break
     }
     
     DispatchQueue.main.async {

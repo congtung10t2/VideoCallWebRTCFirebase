@@ -8,6 +8,7 @@ target 'LanguageOne' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'GoogleWebRTC'
+  pod 'MaterialComponents/BottomAppBar'
 
   # Pods for LanguageOne
 
