@@ -24,6 +24,7 @@ class WebRTCController {
   static let shared = WebRTCController()
   var client = WebRTCClient()
   var signalingClient: SignalingWebRTC = SignalingClient.shared
+  let cameraSession = CameraSession()
   
   
 }
@@ -33,6 +34,8 @@ extension WebRTCController: WebRTCProtocol {
     client.renderLocalVideo(to: localView)
     client.renderRemoteVideo(to: remoteView)
     client.delegate = self
+    cameraSession.setupSession()
+    cameraSession.delegate = self
     client.setup(videoTrack: true, audioTrack: true, dataChannel: true)
   }
   
@@ -109,4 +112,10 @@ extension WebRTCController: WebRTCClientDelegate {
   }
   
   
+}
+
+extension WebRTCController: CameraSessionDelegate {
+  func didOutput(_ sampleBuffer: CMSampleBuffer) {
+    client.captureCurrentFrame(sampleBuffer: sampleBuffer)
+  }
 }

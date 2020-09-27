@@ -182,9 +182,9 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
     }
   }
   
-  func captureCurrentFrame(sampleBuffer: CVPixelBuffer){
+  func captureCurrentFrame(pixelBuffer: CVPixelBuffer){
     if let capturer = self.videoCapturer as? RTCCustomFrameCapturer {
-      capturer.capture(sampleBuffer)
+      capturer.capture(pixelBuffer)
     }
   }
   
@@ -216,7 +216,7 @@ class WebRTCClient: NSObject, RTCPeerConnectionDelegate, RTCDataChannelDelegate 
     // audioTrack.source.volume = 10
     return audioTrack
   }
-  
+  //only for simulator
   private func startLocalVideo() {
     if let capturer = self.videoCapturer as? RTCFileVideoCapturer{
       print("setup file video capturer")

@@ -17,10 +17,6 @@ class CameraSession: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     private var device: AVCaptureDevice?
     weak var delegate: CameraSessionDelegate?
     
-    override init() {
-        super.init()
-    }
-    
     func setupSession(){
         self.session = AVCaptureSession()
         session?.sessionPreset = AVCaptureSession.Preset.medium
