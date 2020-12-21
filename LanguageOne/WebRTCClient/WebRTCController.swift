@@ -34,8 +34,14 @@ extension WebRTCController: WebRTCProtocol {
     client.renderLocalVideo(to: localView)
     client.renderRemoteVideo(to: remoteView)
     client.delegate = self
-    cameraSession.setupSession()
-    cameraSession.delegate = self
+    #if targetEnvironment(simulator)
+      // your simulator code
+    #else
+        cameraSession.setupSession()
+        cameraSession.delegate = self
+    #endif
+        
+    
     client.setup(videoTrack: true, audioTrack: true, dataChannel: true)
   }
   

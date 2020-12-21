@@ -31,7 +31,7 @@ class CameraSession: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         self.output = AVCaptureVideoDataOutput()
         let queue: DispatchQueue = DispatchQueue(label: "videodata", attributes: .concurrent)
         self.output?.setSampleBufferDelegate(self, queue: queue)
-        self.output?.alwaysDiscardsLateVideoFrames = false
+        self.output?.alwaysDiscardsLateVideoFrames = true
         self.output?.videoSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange] as [String : Any]
         self.session?.addOutput(self.output!)
         

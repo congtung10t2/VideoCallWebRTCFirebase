@@ -17,7 +17,7 @@ final class RoomViewController: UIViewController {
     return lastRoom
   }
   func calulateRooms() {
-    lastRoom = DataManager.shared.listRoom.map { RoomId(id: $0.key, room: $0.value) }
+    self.lastRoom = DataManager.shared.listRoom.map { RoomId(id: $0.key, room: $0.value) }
   }
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -57,8 +57,11 @@ final class RoomViewController: UIViewController {
   }
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     if keyPath == "listRoom" {
-      calulateRooms()
-      tableView.reloadData()
+          DispatchQueue.main.async {[weak self] in
+            guard let self = self else { return }
+            self.calulateRooms()
+            self.tableView.reloadData()
+          }
     }
   }
 }

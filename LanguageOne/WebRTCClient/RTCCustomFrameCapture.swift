@@ -20,7 +20,7 @@ class RTCCustomFrameCapturer: RTCVideoCapturer {
         }
         let rtcPixelBuffer = RTCCVPixelBuffer(pixelBuffer: pixelBuffer)
         let timeStampNs = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer)) * kNanosecondsPerSecond
-        let rtcVideoFrame = RTCVideoFrame(buffer: rtcPixelBuffer, rotation: RTCVideoRotation._0, timeStampNs: Int64(timeStampNs))
+        let rtcVideoFrame = RTCVideoFrame(buffer: rtcPixelBuffer, rotation: RTCVideoRotation._90, timeStampNs: Int64(timeStampNs))
         delegate?.capturer(self, didCapture: rtcVideoFrame)
     }
     
@@ -28,7 +28,7 @@ class RTCCustomFrameCapturer: RTCVideoCapturer {
         let rtcPixelBuffer = RTCCVPixelBuffer(pixelBuffer: pixelBuffer)
         let timeStampNs = nanoseconds * kNanosecondsPerSecond
 
-        let rtcVideoFrame = RTCVideoFrame(buffer: rtcPixelBuffer, rotation: RTCVideoRotation._0, timeStampNs: Int64(timeStampNs))
+        let rtcVideoFrame = RTCVideoFrame(buffer: rtcPixelBuffer, rotation: RTCVideoRotation._90, timeStampNs: Int64(timeStampNs))
         delegate?.capturer(self, didCapture: rtcVideoFrame)
         nanoseconds += 1
     }
